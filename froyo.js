@@ -8,12 +8,38 @@ that they have ordered three vanilla, two coffee, and one strawberry froyo.  */
 const userImput = prompt('Tell me what froyo flavor do you want separated by commas', 
      'vanilla,vanilla,vanilla,strawberry,coffee,coffee');
 
-const stringsArray = userImput.split(',')
+const flavorsArray = userImput.split(',')
 
-console.log(stringsArray)
+console.log(flavorsArray)
 
-const froyoFlavors= []
-for(const string of stringsArray) {
-     froyoFlavors.push(string)
+/**
+ * @param {string[]} flavors an array with the custumer's flavor
+ * @returns {object} an object with the flavors keys and quantities values
+ */
+function createObject(flavors) {
+     let customerFlavors = {
+      };
+     for (let flavor of flavors) {
+       customerFlavors[`${flavor}`] = `${parseInt(0)}`;
+     }
+     return customerFlavors
 }
-console.log(froyoFlavors)
+
+console.log(createObject(flavorsArray))
+
+function giveFlavorsQuantity(flavors, quantities) {
+     let sum = quantities;
+     for(const flavor of flavors) {
+          if(flavor == 'vanilla'){
+               sum.vanilla += 1;
+          }
+          else if(flavor == 'coffe'){
+               sum.coffe += 1;
+          }
+          else if(flavor == 'strawberry'){
+               sum.strawberry += 1;
+          }
+     }
+     return sum
+}
+ console.log(giveFlavorsQuantity(flavorsArray, createObject(flavorsArray)))
