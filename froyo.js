@@ -20,26 +20,37 @@ function createObject(flavors) {
      let customerFlavors = {
       };
      for (let flavor of flavors) {
-       customerFlavors[`${flavor}`] = `${parseInt(0)}`;
+       customerFlavors[`${flavor}`] = 0;
      }
+     for(let flavor of flavors){
+     if(flavor == 'vanilla'){
+          customerFlavors.vanilla += +1;
+     }
+     else if(flavor == 'coffee'){
+          customerFlavors.coffee += +1;
+     }
+     else if(flavor == 'strawberry'){
+          customerFlavors.strawberry += +1;
+     }
+}
      return customerFlavors
 }
 
 console.log(createObject(flavorsArray))
-
 function giveFlavorsQuantity(flavors, quantities) {
      let sum = quantities;
      for(const flavor of flavors) {
           if(flavor == 'vanilla'){
-               sum.vanilla += 1;
+               sum.vanilla += +1;
           }
-          else if(flavor == 'coffe'){
-               sum.coffe += 1;
+          else if(flavor == 'coffee'){
+               sum.coffee += +1;
           }
           else if(flavor == 'strawberry'){
-               sum.strawberry += 1;
+               sum.strawberry += +1;
           }
      }
+ 
      return sum
 }
  console.log(giveFlavorsQuantity(flavorsArray, createObject(flavorsArray)))
