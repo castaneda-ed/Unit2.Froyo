@@ -41,11 +41,11 @@ function createObject(flavors) {
      return customerFlavors
 }
 
-console.log(createObject(flavorsArray))
+console.table(createObject(flavorsArray))
 
 const tableOfQuantities = createObject(flavorsArray)
 
-console.log(tableOfQuantities)
+console.table(tableOfQuantities)
 
 
 // THIS WAS WORKING BUT DISCOVERED THAT I WAS ABLE  TO DO IT IN UN FUNCTION
